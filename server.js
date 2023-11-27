@@ -24,8 +24,10 @@ app.get('/', (req, res) => {
 app.post('/send-gait-score', ({body}, res)=>{
     console.log(body)
     const {authScore, username} = body
-    if (username in userScores) userScores[username] = [authScore]
-    else userScores[username].push(authScore)
+
+    if (username in userScores) userScores[username].push(authScore)
+    else userScores[username] = [authScore]
+
     console.log(userScores)
 
     //Receive the authenticator decision and forward that to our website
