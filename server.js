@@ -14,6 +14,10 @@ const gaitAuthDecisionHandler = decision => {
     pass
 }
 
+app.get('/', (req, res) => {
+    res.send('Welcome to SuperFido Auth API');
+})
+
 app.get('/gait-authenticator-decision', ({body}, res)=>{
     //Receive the authenticator decision and forward that to our website
     res.send('Ack');
