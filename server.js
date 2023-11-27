@@ -20,8 +20,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/send-gait-score', ({body}, res)=>{
+    console.log(body)
     //Receive the authenticator decision and forward that to our website
-    res.send('Ack');
+    res.send({'responseString': 'Ack'});
 })
 
 app.listen(port, '0.0.0.0', () => console.log(`Listening on port: ${port}`))
