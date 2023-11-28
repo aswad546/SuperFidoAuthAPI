@@ -35,8 +35,8 @@ app.post('/send-gait-score', ({body}, res)=>{
 })
 
 app.post('/get-gait-score', ({body}, res) => {
-    console.log(body)
-    if (body.username in userScores) {
+    console.log(body['username'], body.username, body)
+    if (body['username'] in userScores) {
         //Send most recent auth score
         res.send({'authScore': userScores[username].slice(-1)})
     }
