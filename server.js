@@ -39,8 +39,9 @@ app.post('/get-gait-score', ({body}, res) => {
     if (body['username'] in userScores) {
         //Send most recent auth score
         res.send({'authScore': userScores[body.username].slice(-1)})
+    } else{
+        res.send({'error': 'User with username does not have any auth score in our API'})        
     }
-    res.send({'error': 'User with username does not have any auth score in our API'})
 
 })
 
